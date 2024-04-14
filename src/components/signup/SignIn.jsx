@@ -22,11 +22,13 @@ const SignIn = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `https://task-manager12-5.onrender.com/api/v1/signin`,
+        `${window.location.origin}/api/v1/signin`,
         Inputs
       );
       console.log(response.data);
+      console.log("response outside if",response.data.user._id);
       if (response.data) {
+        console.log("response",response.data.user._id);
         sessionStorage.setItem("id", response.data.user._id);
         dispatch(authActions.login());
         history("/todo");
