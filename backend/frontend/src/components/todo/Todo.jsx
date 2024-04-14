@@ -27,7 +27,7 @@ const Todo = () => {
     } else {
       if (id) {
         await axios
-          .post(`http://localhost:1000/api/v2/addTask`, {
+          .post(`${window.location.origin}/api/v2/addTask`, {
             title: Inputs.title,
             body: Inputs.body,
             id: id,
@@ -51,7 +51,7 @@ const Todo = () => {
   const del = async (Cardid) => {
     if (id) {
       await axios
-        .delete(`http://localhost:1000/api/v2/deleteTask/${Cardid}`, {
+        .delete(`${window.location.origin}/api/v2/deleteTask/${Cardid}`, {
           data: { id: id },
         })
         .then(() => {
@@ -72,7 +72,7 @@ const Todo = () => {
     if (id) {
       const fetch = async () => {
         await axios
-          .get(`http://localhost:1000/api/v2/getTasks/${id}`)
+          .get(`${window.location.origin}/api/v2/getTasks/${id}`)
           .then((response) => {
             setArray(response.data.list);
           });
