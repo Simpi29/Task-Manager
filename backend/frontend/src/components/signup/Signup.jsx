@@ -4,6 +4,7 @@ import HeadingComp from "./HeadingComp";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { baseurl } from "../../url";
 const Signup = () => {
   const history = useNavigate();
   const [Inputs, setInputs] = useState({
@@ -18,7 +19,7 @@ const Signup = () => {
   const submit = async (e) => {
     e.preventDefault();
     await axios
-      .post(`${window.location.origin}/api/v1/register`, Inputs)
+      .post(`https://task-manager12-4.onrender.com/api/v1/register`, Inputs)
       .then((response) => {
         if (response.data.message === "User Already Exists") {
           alert(response.data.message);

@@ -6,11 +6,9 @@ const path = require("path");
 const auth = require("./routes/auth");
 const list = require("./routes/list");
 app.use(express.json());
-app.use(cors({
-  origin: ["https://deploy-mern-1whq.vercel.app"],
-  methods: ["POST", "GET", "PUT", "PATCH", "DELETE"], // Include PUT, PATCH, and DELETE methods
-  credentials: true
-}));
+app.use(cors(
+  
+));
 
 
 

@@ -5,8 +5,8 @@ const conn = async (req, res) => {
     await mongoose
       .connect(
        // "mongodb+srv://Simpi:Sd2771825@@cluster0.r0ovj38.mongodb.net/"
-      //  "mongodb+srv://simpi:simpi@cluster0.nbpp3nj.mongodb.net/"
-      "mongodb+srv://simpi:simpi@cluster0.nbpp3nj.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0"
+        "mongodb+srv://simpi:simpi@cluster0.nbpp3nj.mongodb.net/"
+      //"mongodb+srv://simpi:simpi@cluster0.nbpp3nj.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0"
        
       )
       .then(() => {

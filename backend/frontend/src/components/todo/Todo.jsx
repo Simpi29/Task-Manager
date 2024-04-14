@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Update from "./Update";
 import axios from "axios";
+import { baseurl } from "../../url";
 let id = sessionStorage.getItem("id");
 let toUpdateArray = [];
 const Todo = () => {
@@ -27,7 +28,7 @@ const Todo = () => {
     } else {
       if (id) {
         await axios
-          .post(`${window.location.origin}/api/v2/addTask`, {
+          .post(`https://task-manager12-4.onrender.com/api/v2/addTask`, {
             title: Inputs.title,
             body: Inputs.body,
             id: id,
@@ -51,7 +52,7 @@ const Todo = () => {
   const del = async (Cardid) => {
     if (id) {
       await axios
-        .delete(`${window.location.origin}/api/v2/deleteTask/${Cardid}`, {
+        .delete(`https://task-manager12-4.onrender.com/api/v2/deleteTask/${Cardid}`, {
           data: { id: id },
         })
         .then(() => {
@@ -72,7 +73,7 @@ const Todo = () => {
     if (id) {
       const fetch = async () => {
         await axios
-          .get(`${window.location.origin}/api/v2/getTasks/${id}`)
+          .get(`https://task-manager12-4.onrender.com/api/v2/getTasks/${id}`)
           .then((response) => {
             setArray(response.data.list);
           });

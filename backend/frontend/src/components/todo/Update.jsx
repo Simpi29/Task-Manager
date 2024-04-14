@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { baseurl } from "../../url";
 const Update = ({ display, update }) => {
   useEffect(() => {
     setInputs({
@@ -19,7 +20,7 @@ const Update = ({ display, update }) => {
   };
   const submit = async () => {
     await axios
-      .put(`${window.location.origin}/api/v2/updateTask/${update._id}`, Inputs)
+      .put(`https://task-manager12-4.onrender.com/api/v2/updateTask/${update._id}`, Inputs)
       .then((response) => {
         toast.success(response.data.message);
       });
