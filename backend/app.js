@@ -6,7 +6,12 @@ const path = require("path");
 const auth = require("./routes/auth");
 const list = require("./routes/list");
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ["https://deploy-mern-1whq.vercel.app"],
+  methods: ["POST", "GET", "PUT", "PATCH", "DELETE"], // Include PUT, PATCH, and DELETE methods
+  credentials: true
+}));
+
 
 app.use("/api/v1", auth);
 app.use("/api/v2", list);
@@ -16,6 +21,6 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
 });
 
-app.listen(1000, () => {
+app.listen(3000, () => {
   console.log("Server Started");
 });
