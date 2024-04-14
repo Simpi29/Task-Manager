@@ -19,7 +19,7 @@ const Signup = () => {
   const submit = async (e) => {
     e.preventDefault();
     await axios
-      .post(`https://task-manager12-4.onrender.com/api/v1/register`, Inputs)
+      .post(`https://task-manager12-5.onrender.com/api/v1/register`, Inputs)
       .then((response) => {
         if (response.data.message === "User Already Exists") {
           alert(response.data.message);
