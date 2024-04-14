@@ -12,7 +12,12 @@ app.use(cors({
   credentials: true
 }));
 
-
+mongoose
+.connect(
+ // "mongodb+srv://Simpi:Sd2771825@@cluster0.r0ovj38.mongodb.net/"
+  "mongodb+srv://simpi:simpi@cluster0.nbpp3nj.mongodb.net/"
+ 
+)
 app.use("/api/v1", auth);
 app.use("/api/v2", list);
 
