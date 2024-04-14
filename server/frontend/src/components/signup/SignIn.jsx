@@ -22,7 +22,7 @@ const SignIn = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${window.location.origin}/api/v1/signin`,
+        `https://task-manager12-6.onrender.com/api/v1/signin`,
         Inputs
       );
       console.log(response.data);
